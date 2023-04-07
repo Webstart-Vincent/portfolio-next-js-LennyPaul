@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
+import {Fira_Code } from '@next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Fira_Code({ subsets: ['latin'] })
 
 export default function Home() {
     return (

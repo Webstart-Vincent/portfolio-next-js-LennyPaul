@@ -61,21 +61,25 @@ export default function Works({ work }: Props){
                 <section className="w-full px-[5vw] pb-[5vw]">
                     <div className="w-full box-border grid grid-cols-3 gap-[20px]">
                         {works.map((work) => (
-                            <div key={work._id} className="card">
-                                <Link href={`/admin/works/${work._id}`}>
-                                    <div className="w-full p-5 text-white bg-black/50">
-                                        <h2 className="font-semibold text-lg mb-2.5">{work.title}</h2>
-                                        <p className="text-sm">{work.description}</p>
+                        <Link href={`/admin/works/${work._id}`}>
+                            <div className="max-w-sm rounded overflow-hidden shadow-lg border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white" >
+                                <CldImage width={200} height={200} src={work.coverImage} alt={work.title}/>
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl text-[#000000] mb-2 ">{work.title}</div>
+                                        <p className="text-gray-700 text-base">
+                                            {work.description}
+                                        </p>
                                     </div>
-                                    <div className="w-full h-[200px]">
-                                        <CldImage width={200} height={200} src={work.coverImage} alt={work.title} />
+                                    <div className="px-6 pt-4 pb-2">
+                                        <span
+                                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                                        <span
+                                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                                        <span
+                                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                                     </div>
-                                </Link>
-                                <div>
-                                    <Link href={`/admin/works/update/${work._id}`}>Modifier</Link>
-                                    <button onClick={() => deleteWork(work._id)}>Supprimer</button>
-                                </div>
                             </div>
+                        </Link>
                         ))}
                     </div>
                 </section>

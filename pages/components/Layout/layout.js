@@ -10,8 +10,8 @@ import Acceuil from "@/pages/components/Acceuil";
 export function Layout({ children: pageContent }) {
     return <div>
         <Head>
-            <title>AstroTeams</title>
-            <meta name="description" content="Eleven Labs Astro Teams" />
+            <title>Portefolio | Lenny Paul</title>
+            <meta name="description" content="Portefolio de Lenny Paul Dévellopeur Web Fullstask" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <Acceuil></Acceuil>

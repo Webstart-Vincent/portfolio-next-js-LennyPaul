@@ -3,9 +3,10 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    "./node_modules/flowbite-react/**/*.js",
   ],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class', // or 'class'
   theme: {
     screens: {
       sm: '640px',
@@ -364,7 +365,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      satoshi: ['var(--satoshi-font)', 'sans-serif'],
+      satoshi: ['var(--FiraCode-font)', 'sans-serif'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -944,5 +945,7 @@ module.exports = {
     'active',
     'disabled',
   ],
-  plugins: [],
+  plugins: [
+    require("flowbite/plugin")
+  ],
 }

@@ -3,14 +3,16 @@ import type { AppProps } from 'next/app'
 import {Layout} from './components/Layout/layout'
 import Head from 'next/head'
 import Script from 'next/script'
+import {Fira_Code } from '@next/font/google'
+import {SessionProvider} from 'next-auth/react'
 
 // pages/_app.js
-import localFont from '@next/font/local'
+import { NextFont } from '@next/font'
 
 // Font files can be colocated inside of `pages`
-const Satoshi = localFont({ src: '../styles/fonts/Satoshi-Regular.otf' })
+const FiraCode : NextFont = Fira_Code({ subsets: ['latin'] })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps:{session,...pageProps} }: AppProps) {
   return(
       <>
           <Head >
@@ -19,12 +21,14 @@ export default function App({ Component, pageProps }: AppProps) {
           </Head>
           <style jsx global>
               {`
-                :root {
-                  --satoshi-font: ${Satoshi};
+                html {
+                  font-family: ${FiraCode.style.fontFamily};
                 }
           `}
           </style>
-          <Layout><Component {...pageProps} /></Layout>
+          <SessionProvider>
+              <Layout><Component {...pageProps} /></Layout>
+          </SessionProvider>
       </>
   )
 }

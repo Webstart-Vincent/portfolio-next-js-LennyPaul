@@ -61,7 +61,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
         }
     }
 }
-export default SingleWorkPage*/
+
+ */
 
 const SingleWorkPage: NextPage<Props> = () => {
     return (
@@ -73,3 +74,5 @@ const SingleWorkPage: NextPage<Props> = () => {
         </>
     )
 }
+
+export default SingleWorkPage

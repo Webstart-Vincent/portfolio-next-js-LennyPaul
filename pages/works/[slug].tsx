@@ -54,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     } catch (error) {
         console.log('pages/works/[slug].tsx > error ›', error)
         return {
-            paths: O,
+            paths: "O",
             fallback: false,
         }
     }

@@ -1,3 +1,4 @@
+
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 import { IWork } from '@/@types/work'
@@ -5,6 +6,7 @@ import { ParsedUrlQuery } from 'querystring'
 interface Props {
     work: IWork | null
 }
+/*
 const SingleWorkPage: NextPage<Props> = ({ work }) => {
     return (
         <>
@@ -59,4 +61,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
         }
     }
 }
-export default SingleWorkPage
+export default SingleWorkPage*/
+
+const SingleWorkPage: NextPage<Props> = () => {
+    return (
+        <>
+            <Head>
+                <title>Document</title>
+            </Head>
+            <h1>Pas de projet !</h1>
+        </>
+    )
+}

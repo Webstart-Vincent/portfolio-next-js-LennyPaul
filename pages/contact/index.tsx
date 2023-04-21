@@ -88,12 +88,6 @@ const Contact: FC = () => {
 
                 {message &&
                     <div className="right-0 top-[8%] fixed mb-3 inline-flex w-fit items-center rounded-l-lg bg-green-400 px-6 py-5 text-white-500" role="alert">
-                    <span className="mr-2">
-
-                    </span>
-                        <svg className="h-6 w-6 text-orange-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2 4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H2zm14.707 3.293l-5.5 5.5a1 1 0 01-1.414 0l-5.5-5.5A1 1 0 015.5 6h9a1 1 0 011.207 1.293z"></path>
-                        </svg>
                         <p className="text-sm font-semibold text-white">{message}</p>
                     </div>
                 }
@@ -197,7 +191,7 @@ const Contact: FC = () => {
                     </div>
                     <div className="flex items-center justify-between">
                         <button
-                            className="btn__go"
+                            className="bg-transparent hover:bg-[#C778DD]-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                             type="submit"
                         >
                             Envoyer

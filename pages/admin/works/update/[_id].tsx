@@ -113,7 +113,7 @@ export default function CreateWork(){
                         <input type="text" id="slug" name="slug" placeholder="Slug du projet" value={workEdit.slug} onChange={handleChange} className="border-b-2 border-black mb-[20px] w-[50%] py-[10px] px-[20px]"  />
                         <input type="hidden" id="coverImage" name="coverImage" placeholder="Image du projet" value={workEdit.coverImage} onChange={handleChange}  className="border-b-2 border-black mb-[20px] w-[50%] py-[10px] px-[20px]" />
                         <CldUploadWidget uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
-                                         onUpload={(res: { info: { secure_url: any; }; }) => {
+                                         onUpload={(res: { info: { public_id: any; }; }) => {
                                              console.log('res : ',res.info)
                                                 setWorkEdit((prev) => ({
                                                     ...prev,

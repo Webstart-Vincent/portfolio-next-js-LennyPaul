@@ -11,7 +11,7 @@ const Acceuil: FC = () => {
                 <Link href={`/`}> Portefolio | Lenny Paul</Link>
                 <div className="flex flex-row items-center gap-10">
                     <Link href={`/works`}> <span className="text-[#C778DD]">#</span>Project</Link>
-                    <Link href={`/admin/works`}> <span className="text-[#C778DD]">#</span>Contact</Link>
+                    <Link href={`/contact`}> <span className="text-[#C778DD]">#</span>Contact</Link>
                     <div>
                         &nbsp;
                         {session ? (

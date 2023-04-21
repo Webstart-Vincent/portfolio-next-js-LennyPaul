@@ -35,7 +35,7 @@ export default function Works({ work }: Props){
                 <section className="w-full px-[5vw] pb-[5vw]">
                     <div className="w-full box-border grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-[20px]">
                         {works.map((work) => (
-                            <Link href={`/admin/works/${work._id}`}>
+                            <Link href={`/admin/works/${work.slug}`}>
                                 <div className="rounded overflow-hidden border-r border-t border-b border-l border-gray-400 max-w-[18rem]" >
                                     <div className="border-b border-gray-400">
                                         <CldImage width={300} height={200} src={work.coverImage} alt={work.title}/>

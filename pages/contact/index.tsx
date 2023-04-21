@@ -91,113 +91,114 @@ const Contact: FC = () => {
                         <p className="text-sm font-semibold text-white">{message}</p>
                     </div>
                 }
+                    <form onSubmit={handleSubmit} className="w-3/6 center">
+                        <div className="mb-4">
+                            <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="name">
+                                Nom
+                            </label>
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                id="name"
+                                type="text"
+                                placeholder="Votre nom"
+                                value={courrier.name}
+                                onChange={handleChange}
+                                required
+                            />
+                            {error?.name &&
+                                <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
+                                    <p id="message" className="courrier-error">{error.name}</p>
+                                </div>
+                            }
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="email">
+                                Email
+                            </label>
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                id="email"
+                                type="email"
+                                placeholder="Votre adresse e-mail"
+                                value={courrier.email}
+                                onChange={handleChange}
+                                required
+                            />
+                            {error?.email &&
+                                <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
+                                    <p id="message" className="courrier-error">{error.email}</p>
+                                </div>
+                            }
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="phone">
+                                Phone
+                            </label>
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                id="phone"
+                                type="number"
+                                placeholder="Votre phone"
+                                value={courrier.phone}
+                                onChange={handleChange}
+                                required
+                            />
+                            {error?.phone &&
+                                <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
+                                    <p id="message" className="courrier-error">{error.phone}</p>
+                                </div>
+                            }
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="sujet">
+                                Sujet
+                            </label>
+                            <input
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                id="sujet"
+                                type="text"
+                                placeholder="Quel est l'objet de votre message ?"
+                                value={courrier.sujet}
+                                onChange={handleChange}
+                                required
+                            />
+                            {error?.sujet &&
+                                <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
+                                    <p id="message" className="courrier-error">{error.sujet}</p>
+                                </div>
+                            }
+                        </div>
 
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                        <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="name">
-                            Nom
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                            id="name"
-                            type="text"
-                            placeholder="Votre nom"
-                            value={courrier.name}
-                            onChange={handleChange}
-                            required
-                        />
-                        {error?.name &&
-                            <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
-                                <p id="message" className="courrier-error">{error.name}</p>
-                            </div>
-                        }
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="email">
-                            Email
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                            id="email"
-                            type="email"
-                            placeholder="Votre adresse e-mail"
-                            value={courrier.email}
-                            onChange={handleChange}
-                            required
-                        />
-                        {error?.email &&
-                            <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
-                                <p id="message" className="courrier-error">{error.email}</p>
-                            </div>
-                        }
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="phone">
-                            Phone
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                            id="phone"
-                            type="number"
-                            placeholder="Votre phone"
-                            value={courrier.phone}
-                            onChange={handleChange}
-                            required
-                        />
-                        {error?.phone &&
-                            <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
-                                <p id="message" className="courrier-error">{error.phone}</p>
-                            </div>
-                        }
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="sujet">
-                            Sujet
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                            id="sujet"
-                            type="text"
-                            placeholder="Quel est l'objet de votre message ?"
-                            value={courrier.sujet}
-                            onChange={handleChange}
-                            required
-                        />
-                        {error?.sujet &&
-                            <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
-                                <p id="message" className="courrier-error">{error.sujet}</p>
-                            </div>
-                        }
-                    </div>
 
+                        <div className="mb-6">
+                            <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="message">
+                                Message
+                            </label>
+                            <textarea
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                id="message-contact"
+                                placeholder="Votre message"
+                                value={courrier.message}
+                                onChange={(e) => {handleChange(e); Textarea(e);}}
+                                required
+                            />
+                            {error?.message &&
+                                <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
+                                    <p id="message" className="courrier-error">{error.message}</p>
+                                </div>
+                            }
+                        </div>
+                        <div className="flex items-center justify-between">
+                            <button
+                                className="bg-transparent hover:bg-[#C778DD] text-white font-semibold hover:text-white py-2 px-4 border border-[#C778DD] hover:border-transparent rounded"
+                                type="submit"
+                            >
+                                Envoyer
+                            </button>
+                        </div>
+                    </form>
 
-                    <div className="mb-6">
-                        <label className="block text-white-700 text-sm font-bold mb-2" htmlFor="message">
-                            Message
-                        </label>
-                        <textarea
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                            id="message-contact"
-                            placeholder="Votre message"
-                            value={courrier.message}
-                            onChange={(e) => {handleChange(e); Textarea(e);}}
-                            required
-                        />
-                        {error?.message &&
-                            <div className="mb-3 inline-flex w-full items-center rounded bg-red-400 px-1 py-1 text-gray-500" role="alert">
-                                <p id="message" className="courrier-error">{error.message}</p>
-                            </div>
-                        }
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <button
-                            className="bg-transparent hover:bg-[#C778DD]-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-                            type="submit"
-                        >
-                            Envoyer
-                        </button>
-                    </div>
-                </form>
+                
             </div>
         </>
     )

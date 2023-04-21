@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import React,{ FC } from 'react';
 import {  useState, useEffect } from 'react'
+
 
 
 const Contact: FC = () => {
@@ -83,17 +84,6 @@ const Contact: FC = () => {
                     <h2 className="whitespace-nowrap text-2xl w-auto font-semibold text-white-700 align-middle flex items-center">
                         &nbsp;Contactez-moi !&nbsp;
                     </h2>
-                    <span className="w-full flex items-center">
-                        <svg className="letters letter1 h-6 w-6 text-orange-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2 4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H2zm14.707 3.293l-5.5 5.5a1 1 0 01-1.414 0l-5.5-5.5A1 1 0 015.5 6h9a1 1 0 011.207 1.293z"></path>
-                        </svg>
-                        <svg className="letters letter2 h-6 w-6 text-orange-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2 4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H2zm14.707 3.293l-5.5 5.5a1 1 0 01-1.414 0l-5.5-5.5A1 1 0 015.5 6h9a1 1 0 011.207 1.293z"></path>
-                        </svg>
-                        <svg className="letters letter3 h-6 w-6 text-orange-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2 4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H2zm14.707 3.293l-5.5 5.5a1 1 0 01-1.414 0l-5.5-5.5A1 1 0 015.5 6h9a1 1 0 011.207 1.293z"></path>
-                        </svg>
-                    </span>
                 </div>
 
                 {message &&

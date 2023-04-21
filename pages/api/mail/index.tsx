@@ -39,7 +39,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                         message: message
                     },
                     to: {
-                        email: "fred79272@gmail.com"
+                        email: "lenpaul7@gmail.com"
                     }
                 }
             });

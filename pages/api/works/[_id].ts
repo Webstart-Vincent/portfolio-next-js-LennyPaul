@@ -26,7 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     } = req
 
     if (req.method === 'GET') {
-        
+
 
         try {
 
@@ -51,7 +51,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 message = `Ce projet n'existe pas !`
                 code = 409
             }
-            
+
             return res.status(code).json({
                 message,
             })
@@ -118,7 +118,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             })
         }
 
-        
+
 
     }
 

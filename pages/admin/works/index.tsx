@@ -49,42 +49,39 @@ export default function Works({ work }: Props){
 
     if(works){
         return (
-            <>
-                <header>
-                    <h1>Mes travaux</h1>
+            <div className="p-4 flex flex-col">
+                <header className="flex flex-row w-screen items-center gap-[5%] px-[5vw] py-[2%]">
+                    <h1 className="text-xl font-extrabold"><span className="text-[#C778DD]">#</span>projets</h1>
+                    <div className="w-6/12 h-[2px] bg-[#C778DD]" ></div>
                 </header>
+                <div className="flex flex-col gap-4">
+                    <Link href="/admin/works/create"><button className="bg-transparent hover:bg-[#C778DD] text-white font-semibold hover:text-white py-2 px-4 border border-[#C778DD] hover:border-transparent rounded">Créer</button></Link>
 
-                <Link href="/admin/works/create">Créer</Link>
+                    {message && <p className="text-[#C778DD]">{message}</p>}
 
-                {message && <p>{message}</p>}
-
-                <section className="w-full px-[5vw] pb-[5vw]">
-                    <div className="w-full box-border grid grid-cols-3 gap-[20px]">
-                        {works.map((work) => (
-                        <Link href={`/admin/works/${work._id}`}>
-                            <div className="max-w-sm rounded overflow-hidden shadow-lg border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white" >
-                                <CldImage width={200} height={200} src={work.coverImage} alt={work.title}/>
+                    <section className="w-full px-[5vw] pb-[5vw]">
+                        <div className="w-full box-border grid grid-cols-3 gap-[20px]">
+                            {works.map((work) => (
+                                <div className="rounded overflow-hidden border-r border-t border-b border-l border-gray-400 max-w-[18rem]" >
+                                    <Link href={`/works/${work.slug}`}>
+                                    <div className="border-b border-gray-400">
+                                        <CldImage width={300} height={200} src={work.coverImage} alt={work.title}/>
+                                    </div>
                                     <div className="px-6 py-4">
-                                        <div className="font-bold text-xl text-[#000000] mb-2 ">{work.title}</div>
-                                        <p className="text-gray-700 text-base">
-                                            {work.description}
+                                        <div className="font-bold text-xl mb-2 ">{work.title}</div>
+                                        <p className="text-[#abb2bf] text-base">
+                                            {work.seo.description}
                                         </p>
                                     </div>
-                                    <div className="px-6 pt-4 pb-2">
-                                        <span
-                                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                                        <span
-                                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                                        <span
-                                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                                    </div>
-                            </div>
-                        </Link>
-                        ))}
-                    </div>
-                </section>
-
-            </>
+                                    </Link>
+                                    <Link className="p-4" href={`/admin/works/update/${work._id}`}>Modifier</Link>
+                                    <button className="p-4" onClick={() => deleteWork(work._id)}>Supprimer</button>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+            </div>
         )
     }
 }

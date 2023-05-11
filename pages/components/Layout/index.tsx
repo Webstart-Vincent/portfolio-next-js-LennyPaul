@@ -20,8 +20,9 @@ const Layout: FC<Props> = ({children}) => {
         </Head>
         <Acceuil></Acceuil>
             {children}
-        <footer>
-            <div>Footer</div>
+        <footer className="border-t border-opacity-80 mt-8 p-8">
+            <p className="font-bold">Lenny Paul</p>
+            <p className="text-white/50 text-sm"> Front and Back Developpeur based in france  </p>
         </footer>
     </div>
 }

@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 export const getStaticPaths = async () => {
     try {
-        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/works`)
+        const response = await fetch(`/api/works`)
         const json: { works?: IWork[] } = await response.json()
         const {works} = json
         if (!works) throw new Error('Pas de travaux')
@@ -61,7 +61,7 @@ export const getStaticPaths = async () => {
             },
         }))
         return {
-            paths,
+            paths : [],
             fallback: false
         }
     } catch (error) {
